@@ -3,12 +3,34 @@
     grid-template-columns: repeat(12,1fr);
 }
 
+img{
+    max-width: 100%;
+}
+
 .main-image{
-    //grid-column-start: 7;
-    //grid-column-end: 12;
-    grid-column: 7 / 12;
+    grid-area: image;
 }
 
 .main-text{
-    grid-column: 2 / 7;
+    grid-area: title;
+}
+
+
+.grid-main-area{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-areas: 
+        "title title title title title title title title title"
+        "image image image image image image image image image"
+    ;
+}
+
+@media (min-width: 960px){
+    .grid-main-area{
+        display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-areas: 
+            ". title title . image image image image image"
+        ;
+    }
 }
