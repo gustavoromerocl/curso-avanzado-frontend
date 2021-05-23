@@ -25,12 +25,20 @@ img{
     ;
 }
 
+.container{
+    grid-column: span 12; // Se exientde por las 12 columnas 
+}
+
 @media (min-width: 960px){
     .grid-main-area{
         display: grid;
         grid-template-columns: repeat(9,1fr);
         grid-template-areas: 
-            ". title title . image image image image image"
+            "title title title . image image image image image"
         ;
+    }
+
+    .container{
+        grid-column: 2 / 12;
     }
 }
