@@ -1,3 +1,14 @@
+@import './modules/variables.scss';
+
+.container{
+    grid-column: span 12; // Se exientde por las 12 columnas 
+    padding: $big-padding;
+}
+
+body{
+    background-color: $rose;
+}
+
 .grid{
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -25,9 +36,7 @@ img{
     ;
 }
 
-.container{
-    grid-column: span 12; // Se exientde por las 12 columnas 
-}
+
 
 @media (min-width: 960px){
     .grid-main-area{
