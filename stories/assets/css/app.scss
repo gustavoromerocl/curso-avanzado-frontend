@@ -1,22 +1,43 @@
 @import './modules/variables.scss';
-@import './modules/variables';
+@import './modules/mixins.scss';
 
-.container{
-    grid-column: span 12; // Se exientde por las 12 columnas 
-    padding: $big-padding;
-}
+
 
 body{
     background-color: $rose;
 }
 
+img{
+    max-width: 100%;
+}
+
+figure{
+    position: relative;
+    max-height: 100%;
+    margin: 0px;
+    figcaption{
+        padding: $large-padding;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        position: absolute;
+        width: auto;
+        bottom: 0;
+        left: 10px;
+        z-index: 10;
+        @include text-center;
+        color: $fall-white;
+    }
+    //&:hove{} // se usa amperson para referirse al mismo contenedor
+}
+
+.container{
+    grid-column: span 12; // Se exientde por las 12 columnas 
+    padding: $big-padding;
+}
 .grid{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-}
-
-img{
-    max-width: 100%;
 }
 
 .main-image{
