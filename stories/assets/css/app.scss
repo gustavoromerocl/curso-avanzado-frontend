@@ -6,7 +6,7 @@
 
 
 body{
-    background-color: $rose;
+    background-color: $white;
 }
 
 img{
@@ -30,7 +30,7 @@ figure{
         @include text-center;
         color: rgba($fall-white, 0.5);
     }
-    //&:hove{} // se usa amperson para referirse al mismo contenedor
+    //&:hover{} // se usa amperson para referirse al mismo contenedor
 }
 
 .container{
@@ -60,6 +60,32 @@ figure{
     ;
 }
 
+.btn{
+    padding: $large-padding;
+    position: relative;
+    color: $black;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        height: 30%;
+        z-index: -1;
+        background-color: $rose;
+        transition: all 0.15s ease-out;
+    }
+    &:hover{
+        color: $fall-white;
+        &::before{
+            height: 100%;
+        }
+    }
+}
 
 
 @media (min-width: 960px){
