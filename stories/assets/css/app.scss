@@ -45,12 +45,22 @@ figure{
     grid-template-columns: repeat(12,1fr);
 }
 
-
-
+.cover{
+    @include absolute-cover;
+    min-height: 500px;
+    background-color: $violet;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    &.parallax{
+        background-image: url('../../public/images/image2.jpg');
+    }
+}
 
 .grid-main-area{
     display: grid;
     margin-top: $big-margin-top;
+    margin-bottom: $big-margin-top;
     grid-template-columns: repeat(9,1fr);
     grid-template-areas: 
         "title title title title title title title title title"
