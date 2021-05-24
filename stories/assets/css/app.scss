@@ -2,11 +2,13 @@
 
 @import './modules/variables.scss';
 @import './modules/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 
 
-
-body{
+html body{
+    margin: 0;
     background-color: $white;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 img{
@@ -22,6 +24,7 @@ figure{
         font-weight: bold;
         text-transform: uppercase;
         font-size: 1.5em;
+        letter-spacing: 5px;
         position: absolute;
         width: auto;
         bottom: 0;
@@ -42,22 +45,31 @@ figure{
     grid-template-columns: repeat(12,1fr);
 }
 
-.main-image{
-    grid-area: image;
-}
 
-.main-text{
-    grid-area: title;
-}
 
 
 .grid-main-area{
     display: grid;
+    margin-top: $big-margin-top;
     grid-template-columns: repeat(9,1fr);
     grid-template-areas: 
         "title title title title title title title title title"
         "image image image image image image image image image"
     ;
+    .image{
+        grid-area: image;
+    }
+    .text{
+        grid-area: title;
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 1.5em; //salto de linea
+        h1{
+            font-weight: inherit;
+            font-size: $big;
+            letter-spacing: 0.3em;
+        }
+    }
 }
 
 .btn{
