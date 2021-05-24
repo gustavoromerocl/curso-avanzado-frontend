@@ -1,3 +1,5 @@
+/*https://sass-lang.com/documentation*/
+
 @import './modules/variables.scss';
 @import './modules/mixins.scss';
 
@@ -26,7 +28,7 @@ figure{
         left: 10px;
         z-index: 10;
         @include text-center;
-        color: $fall-white;
+        color: rgba($fall-white, 0.5);
     }
     //&:hove{} // se usa amperson para referirse al mismo contenedor
 }
