@@ -112,6 +112,17 @@ figure{
     }
 }
 
+.slider{
+    header{
+        background-color: $violet;
+        color: $white;
+        padding: $large-padding;
+    }
+    h2{
+        margin: 0px;
+    }
+}
+
 .mission{
     align-items: center;
     justify-content: center;
@@ -169,6 +180,9 @@ figure{
         grid-column: 2 / 12;
     }
 
+    .slider{
+        align-items: center;
+    }
     .social{
         a{
             display: inline-block;
