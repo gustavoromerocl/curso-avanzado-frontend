@@ -125,6 +125,21 @@ figure{
     h2{
         margin: 0px;
     }
+    .separator{
+        text-align: right;
+        padding-right: 150px;
+        position: relative;
+        color: $white;
+        &::after{
+            position: absolute;
+            content: '';
+            height: 3px;
+            width: 140px;
+            background-color: currentColor; //referencia al elemento padre
+            top: .7em;
+            right: 0px;
+        }
+    }
 }
 
 .mission{
