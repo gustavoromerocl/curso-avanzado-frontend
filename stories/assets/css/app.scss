@@ -116,7 +116,11 @@ figure{
     header{
         background-color: $violet;
         color: $white;
-        padding: $large-padding;
+        padding: $big-padding;
+        transform: translateY(40px);
+        width: 90%;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     h2{
         margin: 0px;
@@ -182,6 +186,12 @@ figure{
 
     .slider{
         align-items: center;
+        header{
+            transform: translateX(200px);
+            width: 100%;
+            min-height: 350px;
+        }
+
     }
     .social{
         a{
