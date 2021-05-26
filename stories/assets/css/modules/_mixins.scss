@@ -19,7 +19,7 @@
 
 @mixin absolute-cover{
     @include full;
-    position: absolute;
+    position: relative;
     left: 0px;
     right: 0px;
 }
@@ -37,4 +37,15 @@
     z-index: 10;
     @include text-center;
     color: rgba($fall-white, 0.5);
+}
+
+@mixin main-text{
+    font-size: 1.2em;
+    font-weight: 200;
+    line-height: 1.5em; //salto de linea
+    h1{
+        font-weight: inherit;
+        font-size: $big;
+        letter-spacing: 0.3em;
+    }
 }

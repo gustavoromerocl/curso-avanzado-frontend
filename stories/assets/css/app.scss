@@ -34,9 +34,13 @@ figure{
     grid-template-columns: repeat(12,1fr);
 }
 
+.full-height{
+    min-height: 100vh; 
+}
+
 .cover{
     @include absolute-cover;
-    min-height: 500px;
+    min-height: 100vh;
     background-color: $violet;
     background-size: cover;
     background-position: center;
@@ -75,16 +79,10 @@ figure{
     }
     .text{
         grid-area: title;
-        font-size: 1.2em;
-        font-weight: 200;
-        line-height: 1.5em; //salto de linea
-        h1{
-            font-weight: inherit;
-            font-size: $big;
-            letter-spacing: 0.3em;
-        }
+        @include main-text;
     }
 }
+
 
 .btn{
     padding: $large-padding;
@@ -113,7 +111,35 @@ figure{
     }
 }
 
+.mission{
+    align-items: center;
+    justify-content: center;
+    .container{
+        @include main-text;
+        font-size: 1.1em;
+        figure{
+            float:right;
+            margin-left: 20px;
+        }
 
+        p{
+            line-height: 2em;
+            &:nth-of-type(1){
+                margin-bottom: 3em;
+                position: relative;
+                &::after{
+                    content: '';
+                    background-color: $dark-gray;
+                    position: absolute;
+                    bottom: -1.5em;
+                    height: 5px;
+                    width: 70%;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
 @media (min-width: 960px){
     .grid-main-area{
         display: grid;
