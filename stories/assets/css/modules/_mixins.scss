@@ -44,7 +44,7 @@
     font-weight: 200;
     line-height: 1.5em; //salto de linea
     h1,h2{
-        font-weight: inherit;
+        font-weight: inherit; //hereda del contenedor
         font-size: $big;
         letter-spacing: 0.3em;
         line-height: 1.5em;
