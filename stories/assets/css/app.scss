@@ -113,6 +113,22 @@ figure{
 }
 
 .slider{
+    .controls{
+        text-align: right;
+        margin-bottom: 10px;
+        .right-arrow, .left-arrow{
+            height: 70px;
+            @include transition;
+            transition-duration: 0.15s;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.2;
+            }
+        }
+        .left-arrow{
+            margin-right: 1.5em;
+        }
+    }
     .image{
         min-height: 100vh;
         align-items: center;
