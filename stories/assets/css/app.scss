@@ -60,6 +60,34 @@ figure{
             opacity: 0;
             @include transition;
             transition-duration: 0.2s;
+            &:hover{
+                opacity: 1;
+            }
+        }
+
+        &::after{ //pseudo elementos
+            content: '';
+            position: absolute;
+            top: 1.1em;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $yellow;
+            @include transition;
+            transition-duration: 0.2s;
+            transform: scale(0);
+        }
+
+        &:hover::after{
+            transform: scale(1);
+        }
+
+        &:hover span:not(.main){
+            opacity: 1;
+        }
+
+        &:hover span.main{
+            color: $dark-gray;
         }
     }
 
