@@ -29,9 +29,40 @@ figure{
     grid-column: span 12; // Se exientde por las 12 columnas 
     padding: $big-padding;
 }
+
 .grid{
     display: grid;
     grid-template-columns: repeat(12,1fr);
+}
+
+.menu-screen{
+    background-color: $white;
+    height: 100vh; //viewport high
+    width: 100vw; //viewport widht
+    position: fixed;
+    z-index: 100;
+    @include center-vertical-horizontal;
+    @include transition;
+    a{
+        display: block;
+        text-decoration: none;
+        @include text-center;
+        position: relative;
+        margin-top: 1em;
+        &:first-of-type{margin-top: 0;}; //el primer elemnto del mismo tipo
+        .main{
+            display: block;
+            font-size: 2em;
+            color: $rose;
+        }
+        span:not(.main){ //Aplica los estilos a excepcion de la clase especificada
+            color: $violet;
+            opacity: 0;
+            @include transition;
+            transition-duration: 0.2s;
+        }
+    }
+
 }
 
 .full-height{
