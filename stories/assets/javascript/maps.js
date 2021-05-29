@@ -1,3 +1,8 @@
+//Cursos de mapas
+//crea una app web con geolocalizacion
+//curso de desarrollo web front end
+
+import styles from './maps/styles'
 function initMap(){
 
     const coords = {
@@ -7,7 +12,8 @@ function initMap(){
 
     let map = new google.maps.Map(document.getElementById('mapa'),{
         center: coords,
-        zoom: 16
+        zoom: 16,
+        styles: styles,
     });
 
     let marker = new google.maps.Marker({
