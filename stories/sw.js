@@ -1,7 +1,7 @@
 /**
  * install - Descargar y guardar archivos
  * activate - Actualiza y limpia la cache del storege local del navegador
- * fetch
+ * fetch - Carga los archivos desde el cache local, interceptando la solicitudes del navegador hacia el proxy
  */
 const CACHE_NAME = 'STORIES_CACHE-v1';
 
@@ -29,8 +29,34 @@ self.addEventListener('fetch', function(ev){
     ev.respondWith(
         caches.match(ev.request)
             .then(function(response){
-                return response || fetch(ev.request);
+                return searchInCacheOrMakeRequest(ev.request);
+            }).catch(function(err){
+                if(ev.request.mode == "navigate") //validar que la solitud sea de navegacion
+                    return caches.match(ev.request);
             })
     );
 });
 
+//Funcionamiento sin internet
+function searchInCacheOrMakeRequest(request){
+    const cachePromise = caches.open(CACHE_NAME);
+    const matchPromise = cachePromise.then(function(cache){
+      return cache.match(request);
+    });
+  
+  
+    return Promise.all([cachePromise,matchPromise]).then(function([cache,cacheResponse]){
+  
+  
+      const fetchPromise = fetch(request).then(function(fetchResponse){
+  
+        cache.put(request,fetchResponse.clone());
+  
+        return fetchResponse;
+      });
+  
+      return cacheResponse || fetchPromise;
+  
+    });
+  
+}
