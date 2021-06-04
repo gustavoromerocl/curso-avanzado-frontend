@@ -3,7 +3,8 @@ const path = require('path');
 
 const htmlWebpack = new HtmlWebpackPlugin({
     template: './assets/index.template.html',
-    filename: 'index.html'
+    filename: 'index.html',
+    minify: false,
 })
 
 module.exports = {
@@ -17,10 +18,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg)$/, 
+                test: /\.(svg|png|jpg)$/, 
                 loader: 'file-loader'
-            }
-
+            },
         ]
     }
 }
